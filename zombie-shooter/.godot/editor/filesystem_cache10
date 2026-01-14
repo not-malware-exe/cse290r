@@ -1,0 +1,14 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1768320920
+character.gd::GDScript::5785732353128620283::1768320865::0::1::::Character<>CharacterBody2D<><>0<>0<><>::
+icon.svg::CompressedTexture2D::5474940098871245646::1768319410::1768319439::1::::<><><>0<>0<>78a7d01d7e493194b3a064ddaeea86b7<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+character.tscn::PackedScene::1932612447038529352::1768320865::0::1::::<><><>0<>0<><>::uid://coowfwscxyhsl::::res://character.gd
+player.tscn::PackedScene::4850804773051444786::1768320816::0::1::::<><><>0<>0<><>::uid://coowfwscxyhsl::::res://character.gd<>uid://c411ybmjvm68s::::res://states/player/player_walk.gd
+Zote.png::CompressedTexture2D::4259389754530221406::1768320920::1768320921::1::::<><><>0<>0<>3d32def48121b78f461de5a6ca3b10df<>res://.godot/imported/Zote.png-04cd7fafbcb62f0ed848175e686eaa91.ctex::
+::res://states/::1768320606
+delay_state.gd::GDScript::5135437463952150579::1768319654::0::1::::DelayState<>State<><>0<>0<><>::
+character_state.gd::GDScript::5294131297840574113::1768320606::0::1::::CharacterState<>State<><>0<>0<><>::
+state.gd::GDScript::250161984405349822::1768320432::0::1::::State<>Node<><>0<>0<><>::
+state_template.gd::GDScript::3962461000969085320::1768319654::0::1::::<>State<><>0<>0<><>::
+::res://states/player/::1768320671
+player_walk.gd::GDScript::6863613226858834624::1768320671::0::1::::PlayerWalk<>CharacterState<><>0<>0<><>::

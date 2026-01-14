@@ -1,0 +1,7 @@
+res://character.gd
+res://states/character_state.gd
+res://character.tscn
+res://states/player/player_walk.gd
+res://states/state.gd
+res://game_world.tscn
+res://player.tscn
