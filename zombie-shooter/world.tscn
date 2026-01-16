@@ -1,29 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://b10usvvs45tn6"]
+[gd_scene load_steps=4 format=3 uid="uid://b10usvvs45tn6"]
 
-[ext_resource type="PackedScene" uid="uid://d8jc4oy7yg2l" path="res://player_character.tscn" id="1_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://ccy7kgichnmy4" path="res://zombie.tscn" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://d8jc4oy7yg2l" path="res://character_scenes/player_character.tscn" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://ccy7kgichnmy4" path="res://character_scenes/zombies/zombie.tscn" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://cj8pu66vhmgkh" path="res://character_scenes/zombies/leaper.tscn" id="3_tlwt5"]
 
 [node name="World" type="Node2D"]
-position = Vector2(568, 313)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_fj7yv")]
 position = Vector2(-4, -1)
 
 [node name="Zombie" parent="." instance=ExtResource("2_tlwt5")]
 position = Vector2(180, 71)
+drag = null
+energy = null
+health = null
 
 [node name="Zombie2" parent="." instance=ExtResource("2_tlwt5")]
 position = Vector2(-471, -50)
 acceleration = 600.0
+drag = null
+energy = null
+health = null
 
 [node name="Zombie3" parent="." instance=ExtResource("2_tlwt5")]
 position = Vector2(469, -154)
 acceleration = 800.0
+drag = null
+energy = null
+health = null
 
-[node name="Zombie4" parent="." instance=ExtResource("2_tlwt5")]
-position = Vector2(31, 719)
-acceleration = 740.0
+[node name="Zombie4" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(70, -147)
+acceleration = 500.0
 
-[node name="Zombie5" parent="." instance=ExtResource("2_tlwt5")]
-position = Vector2(-244, -534)
-acceleration = 700.0
+[node name="Zombie5" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(-372, -197)
+
+[node name="Zombie6" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(-323, 158)
+acceleration = 200.0
+
+[node name="Zombie7" parent="." instance=ExtResource("2_tlwt5")]
+position = Vector2(510, 390)
+drag = null
+energy = null
+health = null
+
+[node name="Zombie8" parent="." instance=ExtResource("2_tlwt5")]
+position = Vector2(-141, 269)
+acceleration = 600.0
+drag = null
+energy = null
+health = null
+
+[node name="Zombie9" parent="." instance=ExtResource("2_tlwt5")]
+position = Vector2(799, 165)
+acceleration = 800.0
+drag = null
+energy = null
+health = null
+
+[node name="Zombie10" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(400, 172)
+acceleration = 500.0
+
+[node name="Zombie11" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(-42, 122)
+
+[node name="Zombie12" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(7, 477)
+acceleration = 200.0

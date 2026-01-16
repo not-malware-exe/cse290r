@@ -1,7 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://b11nlt1l2hiqc"]
 
-[ext_resource type="Script" uid="uid://cw5ccrtse1g6y" path="res://character.gd" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://cw5ccrtse1g6y" path="res://character_scenes/character.gd" id="1_f50pn"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_f50pn")
+
+[node name="DashTimer" type="Timer" parent="."]

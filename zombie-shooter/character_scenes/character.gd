@@ -6,7 +6,19 @@ class_name Character
 @export var drag : float = 0.9
 @export var friction : float = 60.0
 
+@export var energy : float = 100.0
+@export var health : float = 100.0
+
+
+
 var impulse : Vector2 = Vector2.ZERO
+func _process(delta: float) -> void:
+	velocity -= velocity * drag * delta
+	apply_friction(delta)
+	velocity += impulse
+	impulse = Vector2.ZERO
+	energy = min(energy + delta, 100.0)
+
 func apply_friction(delta : float):
 	
 	for axis in 2:
@@ -20,10 +32,13 @@ func apply_friction(delta : float):
 		
 	
 
-func _process(delta: float) -> void:
-	velocity -= velocity * drag * delta
-	apply_friction(delta)
-
 func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
+
+func damage(amount : float):
+	health -= amount
+	print(health)
+	if health <= 0:
+		queue_free()
+		print("deadaa")

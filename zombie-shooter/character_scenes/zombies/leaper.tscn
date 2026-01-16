@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj8pu66vhmgkh"]
+
+[ext_resource type="Script" uid="uid://cw5ccrtse1g6y" path="res://character_scenes/character.gd" id="1_osos2"]
+[ext_resource type="Texture2D" uid="uid://detrigj2ejk0n" path="res://icon.svg" id="2_kdmq8"]
+[ext_resource type="Script" uid="uid://bv20qxjmj1mer" path="res://states/zombie_ai/leaper_ai.gd" id="3_osos2"]
+[ext_resource type="Script" uid="uid://rqtawah201qv" path="res://dash_module.gd" id="4_iaex7"]
+[ext_resource type="PackedScene" uid="uid://bjjy5evprjiks" path="res://weapons/claws.tscn" id="5_kdmq8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eseir"]
+radius = 15.0
+
+[node name="Zombie" type="CharacterBody2D" groups=["Zombie"]]
+motion_mode = 1
+script = ExtResource("1_osos2")
+metadata/_custom_type_script = "uid://cw5ccrtse1g6y"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eseir")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(3.8263947e-06, 0.657962, 1.1551381e-06, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_kdmq8")
+
+[node name="LeaperAI" type="Node" parent="." node_paths=PackedStringArray("dash_module")]
+script = ExtResource("3_osos2")
+dash_module = NodePath("../DashModule")
+enter_on_set_up = true
+metadata/_custom_type_script = "uid://bv20qxjmj1mer"
+
+[node name="DashModule" type="Node" parent="." node_paths=PackedStringArray("dash_timer")]
+script = ExtResource("4_iaex7")
+dash_impulse = 480.0
+dash_timer = NodePath("DashTimer")
+dash_energy_cost = 0.0
+
+[node name="DashTimer" type="Timer" parent="DashModule"]
+wait_time = 2.0
+
+[node name="Claws" parent="." instance=ExtResource("5_kdmq8")]
