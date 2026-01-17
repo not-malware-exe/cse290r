@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://b10usvvs45tn6"]
+[gd_scene load_steps=7 format=3 uid="uid://b10usvvs45tn6"]
 
 [ext_resource type="Script" uid="uid://dkqn7xs6ev22b" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://d8jc4oy7yg2l" path="res://character_scenes/player_character.tscn" id="1_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://detrigj2ejk0n" path="res://icon.svg" id="2_dwbse"]
 [ext_resource type="PackedScene" uid="uid://ccy7kgichnmy4" path="res://character_scenes/zombies/zombie.tscn" id="2_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://cj8pu66vhmgkh" path="res://character_scenes/zombies/leaper.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://c4xmdv15ix3fw" path="res://character_scenes/zombies/gunner.tscn" id="5_036b0"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_aqk2v")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0, 0.68235296, 0.2901961, 1)
+scale = Vector2(27.77, 27.77)
+texture = ExtResource("2_dwbse")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_fj7yv")]
 position = Vector2(-4, -1)
