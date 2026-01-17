@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccy7kgichnmy4"]
+[gd_scene load_steps=6 format=3 uid="uid://ccy7kgichnmy4"]
 
 [ext_resource type="Script" uid="uid://cw5ccrtse1g6y" path="res://character_scenes/character.gd" id="1_eseir"]
 [ext_resource type="Texture2D" uid="uid://detrigj2ejk0n" path="res://icon.svg" id="2_jmu02"]
-[ext_resource type="Script" uid="uid://rqtawah201qv" path="res://dash_module.gd" id="3_jmu02"]
 [ext_resource type="Script" uid="uid://4n7gxb7je7a8" path="res://states/zombie_ai/zombie_ai.gd" id="4_eseir"]
 [ext_resource type="PackedScene" uid="uid://bjjy5evprjiks" path="res://weapons/claws.tscn" id="5_28uo6"]
 
@@ -13,10 +12,6 @@ radius = 15.0
 motion_mode = 1
 script = ExtResource("1_eseir")
 acceleration = 480.0
-drag = null
-friction = null
-energy = null
-health = null
 metadata/_custom_type_script = "uid://cw5ccrtse1g6y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,17 +22,10 @@ modulate = Color(0, 1, 0, 1)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_jmu02")
 
-[node name="ZombieAI" type="Node" parent="."]
+[node name="ZombieAI" type="Node" parent="." node_paths=PackedStringArray("claw")]
 script = ExtResource("4_eseir")
+claw = NodePath("../Claws")
 enter_on_set_up = true
-
-[node name="DashModule" type="Node" parent="." node_paths=PackedStringArray("dash_timer")]
-script = ExtResource("3_jmu02")
-dash_impulse = 480.0
-dash_timer = NodePath("DashTimer")
-dash_energy_cost = 0.0
-
-[node name="DashTimer" type="Timer" parent="DashModule"]
-wait_time = 2.0
+delay_time = null
 
 [node name="Claws" parent="." instance=ExtResource("5_28uo6")]

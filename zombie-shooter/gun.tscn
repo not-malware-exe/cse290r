@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg6whae0solwt"]
+
+[ext_resource type="Script" uid="uid://dmlrtw3ykt5gg" path="res://gun.gd" id="1_dk5gl"]
+[ext_resource type="PackedScene" uid="uid://bnn21o1crhbt2" path="res://bullet.tscn" id="2_8iju2"]
+[ext_resource type="Texture2D" uid="uid://detrigj2ejk0n" path="res://icon.svg" id="2_kw0bs"]
+
+[node name="Gun" type="Node2D"]
+script = ExtResource("1_dk5gl")
+bullet_scene = ExtResource("2_8iju2")
+
+[node name="GunPivot" type="Node2D" parent="."]
+position = Vector2(25, 15)
+
+[node name="GunOpening" type="Node2D" parent="GunPivot"]
+position = Vector2(20, 0)
+
+[node name="Icon" type="Sprite2D" parent="GunPivot"]
+position = Vector2(10, 0)
+scale = Vector2(0.2, 0.05)
+texture = ExtResource("2_kw0bs")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.5

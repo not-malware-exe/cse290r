@@ -22,9 +22,10 @@ modulate = Color(3.8263947e-06, 0.657962, 1.1551381e-06, 1)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_kdmq8")
 
-[node name="LeaperAI" type="Node" parent="." node_paths=PackedStringArray("dash_module")]
+[node name="LeaperAI" type="Node" parent="." node_paths=PackedStringArray("dash_module", "claw")]
 script = ExtResource("3_osos2")
 dash_module = NodePath("../DashModule")
+claw = NodePath("../Claws")
 enter_on_set_up = true
 metadata/_custom_type_script = "uid://bv20qxjmj1mer"
 

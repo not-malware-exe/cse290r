@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4xmdv15ix3fw"]
+
+[ext_resource type="Script" uid="uid://cw5ccrtse1g6y" path="res://character_scenes/character.gd" id="1_1ya5a"]
+[ext_resource type="Script" uid="uid://c37dn036we0bk" path="res://character_scenes/zombies/gunner.gd" id="1_7tf3r"]
+[ext_resource type="Texture2D" uid="uid://detrigj2ejk0n" path="res://icon.svg" id="2_7tf3r"]
+[ext_resource type="PackedScene" uid="uid://bjjy5evprjiks" path="res://weapons/claws.tscn" id="5_m4eh1"]
+[ext_resource type="PackedScene" uid="uid://dg6whae0solwt" path="res://gun.tscn" id="6_dilpp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eseir"]
+radius = 15.0
+
+[node name="Zombie" type="CharacterBody2D" groups=["Zombie"]]
+motion_mode = 1
+script = ExtResource("1_1ya5a")
+metadata/_custom_type_script = "uid://cw5ccrtse1g6y"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eseir")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.61960787, 1, 0, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7tf3r")
+
+[node name="Claws" parent="." instance=ExtResource("5_m4eh1")]
+
+[node name="Gun" parent="." instance=ExtResource("6_dilpp")]
+
+[node name="GunnerAI" type="Node" parent="." node_paths=PackedStringArray("gun", "claw")]
+script = ExtResource("1_7tf3r")
+gun = NodePath("../Gun")
+claw = NodePath("../Claws")
+enter_on_set_up = true
+metadata/_custom_type_script = "uid://c37dn036we0bk"

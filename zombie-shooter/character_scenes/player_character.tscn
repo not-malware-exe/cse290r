@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://d8jc4oy7yg2l"]
+[gd_scene load_steps=7 format=3 uid="uid://d8jc4oy7yg2l"]
 
 [ext_resource type="Script" uid="uid://dxmk5gooq55et" path="res://character_scenes/player_character.gd" id="1_02ohv"]
 [ext_resource type="Texture2D" uid="uid://detrigj2ejk0n" path="res://icon.svg" id="2_5up26"]
 [ext_resource type="Script" uid="uid://rqtawah201qv" path="res://dash_module.gd" id="3_4akcp"]
 [ext_resource type="PackedScene" uid="uid://dvds5ipt0rlop" path="res://vitality_ui.tscn" id="4_wkojq"]
+[ext_resource type="PackedScene" uid="uid://dg6whae0solwt" path="res://gun.tscn" id="5_w3kg5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02ohv"]
 radius = 15.0
 
-[node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("dash_module") groups=["Player"]]
+[node name="PlayerCharacter" type="CharacterBody2D" node_paths=PackedStringArray("dash_module", "gun") groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_02ohv")
 dash_module = NodePath("DashModule")
+gun = NodePath("Gun")
 metadata/_custom_type_script = "uid://cw5ccrtse1g6y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -33,3 +35,5 @@ dash_timer = NodePath("DashTimer")
 
 [node name="DashTimer" type="Timer" parent="DashModule"]
 wait_time = 0.5
+
+[node name="Gun" parent="." instance=ExtResource("5_w3kg5")]

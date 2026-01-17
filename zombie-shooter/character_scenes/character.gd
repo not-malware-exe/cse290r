@@ -41,4 +41,4 @@ func damage(amount : float):
 	print(health)
 	if health <= 0:
 		queue_free()
-		print("deadaa")
+		print("dead")
